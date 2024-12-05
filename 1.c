@@ -30,7 +30,7 @@ int main(int argc, char **argv){
 						exit(1);
 						break;
 					case 0:
-						if(execl("./c.out","c.out",(char *) NULL) ==-1){
+						if(execl("./c.out","c.out", (char *) NULL) ==-1){
 							perror("execl");
 							exit(1);
 						}
