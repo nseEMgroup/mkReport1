@@ -4,7 +4,7 @@
 #include <time.h>
 
 int main(){
-    FILE *rfp;
+    FILE *rfp; 
     FILE *wfp;
     char *ptr;
     float cpuhz;
