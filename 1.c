@@ -4,10 +4,23 @@
 #include <stdlib.h>
 #include <sys/wait.h>
 
+int wrongOption(){
+	printf("잘못된 옵션을 선택하셨습니다. 'h' 옵션을 사용해 도움말을 확인하세요\n");
+	exit(1);
+	return 0;
+}
+int help(){
+	printf("도움말\n");
+	return 0;
+}
+
 int main(int argc, char **argv){
 	pid_t pidc, pidm;
-	int n, statusc, statusm;
+	int n, status;
 	int remain = 0;
+	if(argc != 2){
+		wrongOption();
+	}
 	while((n=getopt(argc,argv,"cmh"))!=-1){
 		switch(n){
 			case 'c':
@@ -49,19 +62,25 @@ int main(int argc, char **argv){
 				}
 				break;
 			case 'h':
-				printf("도움말\n");
+				while (remain > 0) { //chatgpt 사용
+        			pid_t pid = waitpid(-1, &status, 0);  // 종료된 자식 중 하나 기다림
+     		    	if (pid > 0) {
+     					remain--;
+       				}
+    			}
+				help();
 				break;
 			default:
-				printf("잘못된 옵션을 선택하셨습니다. 'h' 옵션을 사용해 도움말을 확인하세요\n");
+				wrongOption();
 				break;
 		}
 	}
-	while (remain > 0) {
-        int status;
+	while (remain > 0) { //chatgpt 사용
         pid_t pid = waitpid(-1, &status, 0);  // 종료된 자식 중 하나 기다림
         if (pid > 0) {
             remain--;
         }
     }
 	printf("실행 완료\n");
+	return 0;
 }
