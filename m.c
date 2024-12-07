@@ -20,7 +20,7 @@ int main(){
 	sysinfo(&meminfo);
 	fprintf(fp, "--- 메모리 현황 ---\n");
 	fprintf(fp, "총 메모리 용량: %.3fGB\n", (float)meminfo.totalram/(1024*1024*1024));
-	fprintf(fp, "사용자 사용 가능 메모리 용량: %.3fGB\n", (float)meminfo.totalhigh/(1024*1024*1024));
+	//fprintf(fp, "사용자 사용 가능 메모리 용량: %.3fGB\n", (float)meminfo.totalhigh/(1024*1024*1024));
 	fprintf(fp, "총 스왑 메모리 용량: %.3fGB\n", (float)meminfo.totalswap/(1024*1024*1024));
 	fprintf(fp, "%s\n", buf);
 	fclose(fp);

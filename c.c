@@ -63,7 +63,7 @@ int main(){
     fprintf(wfp, "--- CPU 보고서 ---\n");
     fprintf(wfp, "코어 갯수: %d, 스레드 갯수: %d\n", core_num, processor);
     fprintf(wfp, "모델 이름: %s",mn);
-    fprintf(wfp, "클럭 속도: %.2fGHz\n", cpuhz);
+    fprintf(wfp, "CPU 클럭: %.2fGHz\n", cpuhz);
     fprintf(wfp, "%s\n", buf);
     fclose(rfp);
     fclose(wfp);
