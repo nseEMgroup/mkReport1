@@ -41,7 +41,7 @@ int main(){
         if(strncmp(a, "cpu MHz", 7)==0){  //완
             ptr = strchr(a,':');
             ptr += 2;
-            cpuhz = atoi(ptr); //chatgpt 사용
+            cpuhz = atof(ptr); //chatgpt 사용
             cpuhz = cpuhz / 1000;
         }
         if(strncmp(a, "core id", 7)==0){ 
@@ -52,6 +52,7 @@ int main(){
             for(i=0;i<core_num;i++){
                 if(core_id[i]==coreid){
                     is=1;
+                    break;
                 }
             }
             if(is == 0){

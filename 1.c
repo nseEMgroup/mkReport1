@@ -15,13 +15,13 @@ int help(){
 	printf("사용법: 1.out [OPTIONS]\n");
 	printf("- 옵션 -\n");
 	printf("-c\n");
-	printf("	CPU에 대한 각종 지표를 출력합니다.\n");
-	printf("	출력 지표: CPU 이름, 코어 수, 스레드 수, CPU 클럭\n");
+	printf(" : CPU에 대한 각종 지표를 출력합니다.\n");
+	printf(" : 출력 지표: CPU 이름, 코어 수, 스레드 수, CPU 클럭\n");
 	printf("-m\n");
-	printf("	메모리에 대한 각종 지표를 출력합니다.\n");
-	printf("	출력 지표: 메모리 용량, 스왑 메모리 용량\n");
+	printf(" : 메모리에 대한 각종 지표를 출력합니다.\n");
+	printf(" : 출력 지표: 메모리 용량, 스왑 메모리 용량\n");
 	printf("-h\n");
-	printf("	여러분들이 지금 보고 계신 이 도움말을 출력합니다.\n");
+	printf(" : 여러분들이 지금 보고 계신 이 도움말을 출력합니다.\n");
 	return 0;
 }
 
